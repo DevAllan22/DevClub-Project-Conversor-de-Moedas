@@ -8,10 +8,18 @@ const yeneToday = 0.039
 const bitcoinToday = 591239.52
 
 
-function convertValues() {
+async function convertValues() {
     const inputCurrencyValue = document.querySelector(".input-currency").value
     const currencyValueToConvert = document.querySelector(".currency-value-to-convert")
     const currencyValueConverted = document.querySelector(".currency-value")
+
+    const data = await fetch ("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL,GBP-BRL,JPY-BRL").then(response => response.json())
+
+    const dolarToday = data.USDBRL.high
+    const euroToday = data.EURBRL.high
+    const libraToday = data.GBPBRL.high
+    const yeneToday = data.JPYBRL.high
+    const bitcoinToday = data.BTCBRL.high
 
 
     if(currencySelect.value == "dolar"){
