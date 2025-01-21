@@ -1,12 +1,6 @@
 const convertButton = document.querySelector(".convertButton")
 const currencySelect = document.querySelector(".currency-select")
 
-const dolarToday = 6.15
-const euroToday = 6.38
-const libraToday = 7.65
-const yeneToday = 0.039
-const bitcoinToday = 591239.52
-
 
 async function convertValues() {
     const inputCurrencyValue = document.querySelector(".input-currency").value
